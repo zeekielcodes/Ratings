@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Interactive rating component by The Face</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@700&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: hsl(216, 12%, 8%);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-family: Overpass;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 20px;
+        color: hsl(0, 0%, 100%);
+      }
+
+      .rate-box {
+        width: 350px;
+        height: 340px;
+        background: hsl(213, 19%, 18%);
+        border-radius: 10px;
+        padding: 25px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: hsl(0, 0%, 100%);
+        margin: 5px 0 0 0;
+      }
+
+      p {
+        color: hsl(216, 12%, 54%);
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      .buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+
+      button.score,
+      label {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: hsl(216, 12%, 8%);
+        border: none;
+        color: hsl(0, 0%, 100%);
+        font-weight: 400;
+        text-align: center;
+      }
+
+      label {
+        padding: 19px;
+      }
+
+      label.s:hover {
+        background: hsl(25, 97%, 53%);
+      }
+
+      input[type="radio"]:checked + label {
+        background: hsl(216, 12%, 54%);
+      }
+
+      input.submit {
+        width: 100%;
+        height: 40px;
+        border-radius: 30px;
+        background: hsl(0, 0%, 100%);
+        color: hsl(25, 97%, 53%);
+        letter-spacing: 2px;
+        font-weight: 700;
+        border: none;
+      }
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      input.submit:hover {
+        color: hsl(0, 0%, 100%);
+        background: hsl(25, 97%, 53%);
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .thank {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      h2 {
+        color: hsl(0, 0%, 100%);
+        margin: 10px 0 0 0;
+      }
+
+      span {
+        padding: 10px;
+        background: hsl(216, 12%, 8%);
+        color: hsl(25, 97%, 53%);
+        border-radius: 20px;
+      }
+
+      img.thanks {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Rating state start -->
+    <div class="rate-box" role="main">
+      <button class="score"><img src="./images/icon-star.svg" alt="" /></button>
+      <h1>How did we do?</h1>
+      <p>
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <form role="form">
+        <div class="buttons">
+          <input
+            type="radio"
+            name="rating"
+            value="1"
+            id="rate"
+            class="score s"
+          />
+          <label for="rate" class="s">1</label>
+          <input
+            type="radio"
+            name="rating"
+            value="2"
+            id="rate2"
+            class="score s"
+          />
+          <label for="rate2" class="s">2</label>
+          <input
+            type="radio"
+            name="rating"
+            value="3"
+            id="rate3"
+            class="score s"
+          />
+          <label for="rate3" class="s">3</label>
+          <input
+            type="radio"
+            name="rating"
+            value="4"
+            id="rate4"
+            class="score s"
+          />
+          <label for="rate4" class="s">4</label>
+          <input
+            type="radio"
+            name="rating"
+            value="5"
+            id="rate5"
+            class="score s"
+          />
+          <label for="rate5" class="s">5</label>
+        </div>
+
+        <input type="submit" class="submit" value="SUBMIT" />
+      </form>
+    </div>
+
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+
+    <div class="attribution" role="contentinfo">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">The Face</a>.
+    </div>
+    <script>
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const rating = document.querySelector(
+          'input[name="rating"]:checked'
+        ).value;
+        const thanks = `<img src="./images/illustration-thank-you.svg" class="thanks"><br/>
+        <span>You selected ${rating} out of 5</span>
+        <h2>Thank you!</h2>
+        <p>We appreciate you taking the time to give a rating. If
+    you ever need more support, don’t hesitate to get in touch!</p>
+        `;
+        document.querySelector(".rate-box").innerHTML = thanks;
+        document.querySelector(".rate-box").style.display = "flex";
+        document.querySelector(".rate-box").style.textAlign = "center";
+      });
+    </script>
+  </body>
+</html>
