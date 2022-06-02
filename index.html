@@ -14,7 +14,6 @@
 
     <title>Interactive rating component by The Face</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@700&display=swap");
 
@@ -99,8 +98,8 @@
         width: 100%;
         height: 40px;
         border-radius: 30px;
-        background: hsl(0, 0%, 100%);
-        color: hsl(25, 97%, 53%);
+        color: hsl(0, 0%, 100%);
+        background: hsl(25, 97%, 53%);
         letter-spacing: 2px;
         font-weight: 700;
         border: none;
@@ -111,8 +110,8 @@
       }
 
       input.submit:hover {
-        color: hsl(0, 0%, 100%);
-        background: hsl(25, 97%, 53%);
+        background: hsl(0, 0%, 100%);
+        color: hsl(25, 97%, 53%);
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -145,13 +144,15 @@
   <body>
     <!-- Rating state start -->
     <div class="rate-box" role="main">
-      <button class="score"><img src="./images/icon-star.svg" alt="" /></button>
+      <button class="score" value="">
+        <img src="./images/icon-star.svg" alt="" />
+      </button>
       <h1>How did we do?</h1>
       <p>
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <form role="form">
+      <form>
         <div class="buttons">
           <input
             type="radio"

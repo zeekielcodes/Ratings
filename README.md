@@ -9,7 +9,7 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/iamtheface/Ratings)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI/hub/interactive-rating-component-3W4KQM1yzh)
 - Live Site URL: [Add live site URL here](https://thefacerating.netlify.app)
 
 ## My process
@@ -18,9 +18,6 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
 - JavaScript
 
 ## Author
